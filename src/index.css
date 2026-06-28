@@ -1,0 +1,439 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(37, 99, 235, 0.18), transparent 30%),
+    #08111f;
+  color: white;
+  min-height: 100vh;
+}
+
+a {
+  color: #7dd3fc;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #bae6fd;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(17, 24, 39, 0.88);
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #334155;
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(14px);
+  z-index: 10;
+}
+
+.logo {
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: white;
+  padding: 0.45rem 0.65rem;
+  border-radius: 8px;
+}
+
+.nav-links a.active {
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.12);
+  font-weight: bold;
+}
+
+.main-container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 80vh;
+}
+
+.hero {
+  text-align: center;
+  padding: 5rem 1rem;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.hero h2 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  margin: 0.5rem 0 1rem;
+}
+
+.hero p {
+  color: #cbd5e1;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.hero-actions,
+.header-actions,
+.card-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.hero-actions {
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.button {
+  display: inline-block;
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.button:hover {
+  background: #1d4ed8;
+  color: white;
+}
+
+.button.secondary {
+  background: rgba(148, 163, 184, 0.16);
+  border: 1px solid #475569;
+}
+
+.button.secondary:hover {
+  background: rgba(148, 163, 184, 0.25);
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.page-header h2 {
+  font-size: 2rem;
+  margin: 0.3rem 0;
+}
+
+.eyebrow {
+  color: #38bdf8;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.78rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.muted {
+  color: #94a3b8;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+  gap: 1.5rem;
+}
+
+.card,
+.detail-card,
+.ship-form,
+.empty-state {
+  background: rgba(17, 24, 39, 0.86);
+  border: 1px solid #334155;
+  border-radius: 18px;
+  padding: 1.5rem;
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.22);
+}
+
+.card {
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: #38bdf8;
+}
+
+.card h3 {
+  margin-top: 0.4rem;
+}
+
+.ship-icon,
+.planet-icon,
+.detail-icon {
+  font-size: 2.25rem;
+}
+
+.card-actions {
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.card-actions button {
+  background: #dc2626;
+  color: white;
+  border: none;
+  padding: 0.55rem 0.85rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.card-actions button:hover {
+  background: #b91c1c;
+}
+
+.form-page {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.ship-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.ship-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  color: #cbd5e1;
+}
+
+.ship-form input,
+.ship-form textarea {
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: 1px solid #475569;
+  background: #020617;
+  color: white;
+}
+
+.ship-form input:focus,
+.ship-form textarea:focus {
+  outline: 2px solid #38bdf8;
+  border-color: transparent;
+}
+
+.ship-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.detail-card {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.detail-list {
+  margin: 1.25rem 0;
+  line-height: 1.7;
+}
+
+.empty-state {
+  text-align: center;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.motto {
+  text-align: center;
+  padding: 1rem;
+  color: #94a3b8;
+  border-top: 1px solid #1e293b;
+}
+
+@media (max-width: 700px) {
+  .navbar,
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main-container {
+    padding: 1rem;
+  }
+
+  .hero {
+    padding: 3rem 0.5rem;
+  }
+}
+
+.ship-icon.launched {
+  animation: launchRocket 1s ease-in-out forwards;
+}
+
+@keyframes launchRocket {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+
+  100% {
+    transform: translateY(-30px) scale(1.2);
+  }
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat-card,
+.mission-panel,
+.mission-history {
+  background: rgba(17, 24, 39, 0.86);
+  border: 1px solid #334155;
+  border-radius: 18px;
+  padding: 1.25rem;
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.22);
+}
+
+.stat-card span {
+  color: #94a3b8;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.stat-card strong {
+  font-size: 1.45rem;
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.required,
+.error-message {
+  color: #fca5a5;
+}
+
+.input-error {
+  border-color: #ef4444 !important;
+}
+
+.success-message {
+  color: #86efac;
+  margin: 0;
+}
+
+.mission-panel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+  align-items: end;
+  margin-bottom: 1.5rem;
+}
+
+.mission-panel label {
+  display: block;
+  color: #cbd5e1;
+  margin-bottom: 0.45rem;
+}
+
+.mission-panel select {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: 1px solid #475569;
+  background: #020617;
+  color: white;
+}
+
+.mission-note,
+.mission-error {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+.population-number {
+  font-size: 1.65rem;
+  font-weight: bold;
+  margin: 0.4rem 0 0;
+  color: #7dd3fc;
+}
+
+.planet-ships {
+  border-top: 1px solid #334155;
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+
+.planet-ships ul,
+.mission-history ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.planet-ships li,
+.mission-history li {
+  background: rgba(2, 6, 23, 0.6);
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  padding: 0.75rem;
+}
+
+.planet-ships li span,
+.mission-history li span {
+  display: block;
+  color: #94a3b8;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+.mission-history {
+  margin-top: 1.5rem;
+}
+
+.loading {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(2, 6, 23, 0.65);
+  backdrop-filter: blur(8px);
+  z-index: 50;
+  margin: 0;
+}
